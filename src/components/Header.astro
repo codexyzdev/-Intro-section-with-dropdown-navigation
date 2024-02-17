@@ -1,0 +1,164 @@
+---
+import Dropdown from "../components/Dropdown.astro";
+import DropdownItem from "./DropdownItem.astro";
+---
+
+<header
+  class="py-6 px-4 sm:py-0 sm:px-0 flex justify-between items-center relative sm:justify-normal"
+>
+  <img class="sm:mr-9" src="images/logo.svg" alt="logo" />
+  <button id="open" class="sm:hidden"
+    ><img src="images/icon-menu.svg" alt="icon-menu" /></button
+  >
+  <nav
+    class="hidden sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:w-full"
+  >
+    <ul class="flex flex-row gap-5">
+      <li class="relative">
+        <div id="features" class="flex gap-4 hover:cursor-pointer">
+          Features
+          <img
+            id="arrow"
+            class="object-contain"
+            src="images/icon-arrow-down.svg"
+            alt="icon arrow"
+          />
+        </div>
+        <ul
+          id="features-items"
+          class="absolute bg-almostWhite h-36 w-40 shadow-md rounded-md p-5 top-9 -left-16 scale-0 transition-transform duration-300 ease-in-out"
+        >
+          <DropdownItem
+            icon="todo"
+            text="Todo List"
+            size="25"
+            sizeParr="text-sm"
+          />
+          <DropdownItem
+            icon="calendar"
+            text="Calendar"
+            size="25"
+            sizeParr="text-sm"
+          />
+          <DropdownItem
+            icon="reminders"
+            text="Reminders"
+            size="25"
+            sizeParr="text-sm"
+          />
+          <DropdownItem
+            icon="planning"
+            text="Planning"
+            size="25"
+            sizeParr="text-sm"
+          />
+        </ul>
+      </li>
+      <li class="relative">
+        <div id="company" class="flex gap-4 hover:cursor-pointer">
+          Company
+          <img
+            id="arrow"
+            class="object-contain"
+            src="images/icon-arrow-down.svg"
+            alt="icon arrow"
+          />
+          <ul
+            id="company-items"
+            class="absolute bg-almostWhite h-28 w-28 shadow-md rounded-md p-5 top-9 left-0 scale-0 transition-transform duration-300 ease-in-out"
+          >
+            <DropdownItem text="History" sizeParr="text-sm" />
+            <DropdownItem text="Our Team" sizeParr="text-sm" />
+            <DropdownItem text="Blog" sizeParr="text-sm" />
+          </ul>
+        </div>
+      </li>
+      <li class=""><a href="#">Careers</a></li>
+      <li class=""><a href="#">About</a></li>
+    </ul>
+    <ul class="flex gap-8">
+      <a
+        class="rounded-md py-2 px-7"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer">Login</a
+      >
+      <a
+        class="border rounded-md py-2 px-7"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Register
+      </a>
+    </ul>
+  </nav>
+  <nav
+    id="nav-mobile"
+    class="bg-almostWhite fixed top-0 right-0 bottom-0 z-50 bg-OffWhite w-4/6 flex flex-col pl-8 translate-x-full transition-transform duration-200 ease-in-out"
+  >
+    <button id="close" class="self-end pt-6 pr-6"
+      ><img src="images/icon-close-menu.svg" alt="icon-menu" /></button
+    >
+    <ul class="flex flex-col gap-4 pt-14">
+      <Dropdown />
+      <li>Careers</li>
+      <li>About</li>
+    </ul>
+    <ul
+      class="absolute bottom-12 flex flex-col w-full items-center -ml-8 gap-4"
+    >
+      <a
+        class="rounded-md px-[68px]"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer">Login</a
+      >
+      <a
+        class="border rounded-md px-14"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Register
+      </a>
+    </ul>
+  </nav>
+</header>
+
+<script defer>
+  const open = document.getElementById("open");
+  const close = document.getElementById("close");
+  const navMobile = document.getElementById("nav-mobile");
+
+  open.addEventListener("click", () => {
+    navMobile.classList.remove("translate-x-full");
+    open.classList.add("hidden");
+  });
+  close.addEventListener("click", () => {
+    navMobile.classList.add("translate-x-full");
+    open.classList.remove("hidden");
+  });
+
+  const features = document.getElementById("features");
+  const featuresItems = document.getElementById("features-items");
+
+  features.addEventListener("click", (e) => {
+    if (featuresItems.classList.contains("scale-0")) {
+      featuresItems.classList.remove("scale-0");
+    } else {
+      featuresItems.classList.add("scale-0");
+    }
+  });
+
+  const company = document.getElementById("company");
+  const companyItems = document.getElementById("company-items");
+
+  company.addEventListener("click", (e) => {
+    if (companyItems.classList.contains("scale-0")) {
+      companyItems.classList.remove("scale-0");
+    } else {
+      companyItems.classList.add("scale-0");
+    }
+  });
+</script>

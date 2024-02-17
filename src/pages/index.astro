@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+---
+
+<Layout title="Frontend Mentor | Intro section with dropdown navigation">
+  <main class="max-w-96 mx-auto sm:py-6 sm:px-4 sm:max-w-full">
+    <Header />
+    <section
+      class="grid grid-cols-1 sm:grid-cols-2 mx-auto sm:max-w-6xl mt-8 sm:gap-28"
+    >
+      <div class="order-2 sm:order-1 flex flex-col justify-between">
+        <h1
+          class="text-4xl text-center font-bold mt-8 sm:text-[77px] sm:text-start sm:leading-none sm:mt-28"
+        >
+          Make remote work
+        </h1>
+        <p
+          class="mt-4 mb-8 px-4 leading-normal text-center font-medium text-mediumGray sm:text-xl sm:text-left sm:px-0 sm:-mt-7 sm:mb-0"
+        >
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <a
+          class="py-3 px-8 font-medium rounded-xl bg-almostBlack text-almostWhite mx-auto sm:ml-0"
+          href="#"
+          >Learn more
+        </a>
+        <div class="flex justify-around mt-10 sm:mt-0">
+          <img
+            class="object-contain size-16"
+            src="/images/client-databiz.svg"
+            alt=""
+          />
+          <img
+            class="object-contain size-16"
+            src="/images/client-audiophile.svg"
+            alt=""
+          />
+          <img
+            class="object-contain size-16"
+            src="/images/client-meet.svg"
+            alt=""
+          />
+          <img
+            class="object-contain size-16"
+            src="/images/client-maker.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <picture class="order-1 sm:order-2">
+        <source
+          media="(min-width: 640px)"
+          srcset="images/image-hero-desktop.png"
+        />
+        <img src="images/image-hero-mobile.png" alt="hero" />
+      </picture>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  icon?: string;
+  text: string;
+  size?: string;
+  sizeParr?: string;
+  classcss?: string;
+}
+
+const { icon, text, size, sizeParr, classcss } = Astro.props;
+---
+
+<li class={`flex gap-4 items-center ` + classcss}>
+  {
+    !icon ? (
+      ""
+    ) : (
+      <img
+        class="object-contain h-4 w-6"
+        src={`images/icon-` + icon + `.svg`}
+        alt={`icom` + icon}
+        width={size + `px`}
+        height={size + `px`}
+      />
+    )
+  }
+  <a href="#" class={`pt-1 ` + sizeParr}>{text}</a>
+</li>

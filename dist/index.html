@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.3.7"><title>Frontend Mentor | Intro section with dropdown navigation</title><link rel="stylesheet" href="/_astro/index.CM8x-v3J.css" /></head> <body class="bg-mediumGray bg-opacity-10">  <main class="max-w-96 mx-auto sm:py-6 sm:px-4 sm:max-w-full"> <header class="py-6 px-4 sm:py-0 sm:px-0 flex justify-between items-center relative sm:justify-normal"> <img class="sm:mr-9" src="images/logo.svg" alt="logo"> <button id="open" class="sm:hidden"><img src="images/icon-menu.svg" alt="icon-menu"></button> <nav class="hidden sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:w-full"> <ul class="flex flex-row gap-5"> <li class="relative"> <div id="features" class="flex gap-4 hover:cursor-pointer">
+Features
+<img id="arrow" class="object-contain" src="images/icon-arrow-down.svg" alt="icon arrow"> </div> <ul id="features-items" class="absolute bg-almostWhite h-36 w-40 shadow-md rounded-md p-5 top-9 -left-16 scale-0 transition-transform duration-300 ease-in-out"> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-todo.svg" alt="icomtodo" width="25px" height="25px"> <a href="#" class="pt-1 text-sm">Todo List</a> </li> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-calendar.svg" alt="icomcalendar" width="25px" height="25px"> <a href="#" class="pt-1 text-sm">Calendar</a> </li> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-reminders.svg" alt="icomreminders" width="25px" height="25px"> <a href="#" class="pt-1 text-sm">Reminders</a> </li> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-planning.svg" alt="icomplanning" width="25px" height="25px"> <a href="#" class="pt-1 text-sm">Planning</a> </li> </ul> </li> <li class="relative"> <div id="company" class="flex gap-4 hover:cursor-pointer">
+Company
+<img id="arrow" class="object-contain" src="images/icon-arrow-down.svg" alt="icon arrow"> <ul id="company-items" class="absolute bg-almostWhite h-28 w-28 shadow-md rounded-md p-5 top-9 left-0 scale-0 transition-transform duration-300 ease-in-out"> <li class="flex gap-4 items-center undefined">  <a href="#" class="pt-1 text-sm">History</a> </li> <li class="flex gap-4 items-center undefined">  <a href="#" class="pt-1 text-sm">Our Team</a> </li> <li class="flex gap-4 items-center undefined">  <a href="#" class="pt-1 text-sm">Blog</a> </li> </ul> </div> </li> <li class=""><a href="#">Careers</a></li> <li class=""><a href="#">About</a></li> </ul> <ul class="flex gap-8"> <a class="rounded-md py-2 px-7" href="#" target="_blank" rel="noopener noreferrer">Login</a> <a class="border rounded-md py-2 px-7" href="#" target="_blank" rel="noopener noreferrer">
+Register
+</a> </ul> </nav> <nav id="nav-mobile" class="bg-almostWhite fixed top-0 right-0 bottom-0 z-50 bg-OffWhite w-4/6 flex flex-col pl-8 translate-x-full transition-transform duration-200 ease-in-out"> <button id="close" class="self-end pt-6 pr-6"><img src="images/icon-close-menu.svg" alt="icon-menu"></button> <ul class="flex flex-col gap-4 pt-14"> <li> <ul id="dropdown" class="flex flex-col"> <div class="flex gap-4">
+Features
+<img id="arrow" class="object-contain" src="images/icon-arrow-down.svg" alt="icon arrow"> </div> <div id="active" class="pl-6 flex flex-col gap-4 overflow-hidden h-0 transition-height duration-300 ease-in-out"> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-todo.svg" alt="icomtodo" width="undefinedpx" height="undefinedpx"> <a href="#" class="pt-1 undefined">Todo List</a> </li> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-calendar.svg" alt="icomcalendar" width="undefinedpx" height="undefinedpx"> <a href="#" class="pt-1 undefined">Calendar</a> </li> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-reminders.svg" alt="icomreminders" width="undefinedpx" height="undefinedpx"> <a href="#" class="pt-1 undefined">Reminders</a> </li> <li class="flex gap-4 items-center undefined"> <img class="object-contain h-4 w-6" src="images/icon-planning.svg" alt="icomplanning" width="undefinedpx" height="undefinedpx"> <a href="#" class="pt-1 undefined">Planning</a> </li> </div> </ul> </li> <li> <ul id="dropdown2" class="flex flex-col"> <div class="flex gap-4">
+Company
+<img id="arrow2" class="object-contain" src="images/icon-arrow-down.svg" alt="icon arrow"> </div> <div id="active2" class="pl-6 flex flex-col gap-4 overflow-hidden h-0 transition-height duration-300 ease-in-ou"> <li class="flex gap-4 items-center undefined">  <a href="#" class="pt-1 undefined">History</a> </li> <li class="flex gap-4 items-center undefined">  <a href="#" class="pt-1 undefined">Our Team</a> </li> <li class="flex gap-4 items-center undefined">  <a href="#" class="pt-1 undefined">Blog</a> </li> </div> </ul> </li> <script defer>
+  const dropdown = document.getElementById("dropdown");
+  const active = document.getElementById("active");
+  const arrow = document.getElementById("arrow");
+  dropdown.addEventListener("click", () => {
+    if (active.classList.contains("h-0")) {
+      active.classList.add("pt-4");
+      active.classList.replace("h-0", "h-auto");
+      arrow.setAttribute("src", "images/icon-arrow-up.svg");
+    } else {
+      active.classList.replace("h-auto", "h-0");
+      active.classList.remove("pt-4");
+      arrow.setAttribute("src", "images/icon-arrow-down.svg");
+    }
+  });
+
+  const dropdown2 = document.getElementById("dropdown2");
+  const active2 = document.getElementById("active2");
+  const arrow2 = document.getElementById("arrow2");
+  dropdown2.addEventListener("click", () => {
+    if (active2.classList.contains("h-0")) {
+      active2.classList.add("pt-4");
+      active2.classList.replace("h-0", "h-auto");
+      arrow2.setAttribute("src", "images/icon-arrow-up.svg");
+    } else {
+      active2.classList.replace("h-auto", "h-0");
+      active2.classList.remove("pt-4");
+      arrow2.setAttribute("src", "images/icon-arrow-down.svg");
+    }
+  });
+</script> <li>Careers</li> <li>About</li> </ul> <ul class="absolute bottom-12 flex flex-col w-full items-center -ml-8 gap-4"> <a class="rounded-md px-[68px]" href="#" target="_blank" rel="noopener noreferrer">Login</a> <a class="border rounded-md px-14" href="#" target="_blank" rel="noopener noreferrer">
+Register
+</a> </ul> </nav> </header> <script defer>
+  const open = document.getElementById("open");
+  const close = document.getElementById("close");
+  const navMobile = document.getElementById("nav-mobile");
+
+  open.addEventListener("click", () => {
+    navMobile.classList.remove("translate-x-full");
+    open.classList.add("hidden");
+  });
+  close.addEventListener("click", () => {
+    navMobile.classList.add("translate-x-full");
+    open.classList.remove("hidden");
+  });
+
+  const features = document.getElementById("features");
+  const featuresItems = document.getElementById("features-items");
+
+  features.addEventListener("click", (e) => {
+    if (featuresItems.classList.contains("scale-0")) {
+      featuresItems.classList.remove("scale-0");
+    } else {
+      featuresItems.classList.add("scale-0");
+    }
+  });
+
+  const company = document.getElementById("company");
+  const companyItems = document.getElementById("company-items");
+
+  company.addEventListener("click", (e) => {
+    if (companyItems.classList.contains("scale-0")) {
+      companyItems.classList.remove("scale-0");
+    } else {
+      companyItems.classList.add("scale-0");
+    }
+  });
+</script> <section class="grid grid-cols-1 sm:grid-cols-2 mx-auto sm:max-w-6xl mt-8 sm:gap-28"> <div class="order-2 sm:order-1 flex flex-col justify-between"> <h1 class="text-4xl text-center font-bold mt-8 sm:text-[77px] sm:text-start sm:leading-none sm:mt-28">
+Make remote work
+</h1> <p class="mt-4 mb-8 px-4 leading-normal text-center font-medium text-mediumGray sm:text-xl sm:text-left sm:px-0 sm:-mt-7 sm:mb-0">
+Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+</p> <a class="py-3 px-8 font-medium rounded-xl bg-almostBlack text-almostWhite mx-auto sm:ml-0" href="#">Learn more
+</a> <div class="flex justify-around mt-10 sm:mt-0"> <img class="object-contain size-16" src="/images/client-databiz.svg" alt=""> <img class="object-contain size-16" src="/images/client-audiophile.svg" alt=""> <img class="object-contain size-16" src="/images/client-meet.svg" alt=""> <img class="object-contain size-16" src="/images/client-maker.svg" alt=""> </div> </div> <picture class="order-1 sm:order-2"> <source media="(min-width: 640px)" srcset="images/image-hero-desktop.png"> <img src="images/image-hero-mobile.png" alt="hero"> </picture> </section> </main>  </body></html>

@@ -1,0 +1,79 @@
+---
+import DropdownItem from "../components/DropdownItem.astro";
+---
+
+<li>
+  <ul id="dropdown" class="flex flex-col">
+    <div class="flex gap-4">
+      Features
+      <img
+        id="arrow"
+        class="object-contain"
+        src="images/icon-arrow-down.svg"
+        alt="icon arrow"
+      />
+    </div>
+    <div
+      id="active"
+      class="pl-6 flex flex-col gap-4 overflow-hidden h-0 transition-height duration-300 ease-in-out"
+    >
+      <DropdownItem icon="todo" text="Todo List" />
+      <DropdownItem icon="calendar" text="Calendar" />
+      <DropdownItem icon="reminders" text="Reminders" />
+      <DropdownItem icon="planning" text="Planning" />
+    </div>
+  </ul>
+</li>
+<li>
+  <ul id="dropdown2" class="flex flex-col">
+    <div class="flex gap-4">
+      Company
+      <img
+        id="arrow2"
+        class="object-contain"
+        src="images/icon-arrow-down.svg"
+        alt="icon arrow"
+      />
+    </div>
+    <div
+      id="active2"
+      class="pl-6 flex flex-col gap-4 overflow-hidden h-0 transition-height duration-300 ease-in-ou"
+    >
+      <DropdownItem text="History" />
+      <DropdownItem text="Our Team" />
+      <DropdownItem text="Blog" />
+    </div>
+  </ul>
+</li>
+
+<script defer>
+  const dropdown = document.getElementById("dropdown");
+  const active = document.getElementById("active");
+  const arrow = document.getElementById("arrow");
+  dropdown.addEventListener("click", () => {
+    if (active.classList.contains("h-0")) {
+      active.classList.add("pt-4");
+      active.classList.replace("h-0", "h-auto");
+      arrow.setAttribute("src", "images/icon-arrow-up.svg");
+    } else {
+      active.classList.replace("h-auto", "h-0");
+      active.classList.remove("pt-4");
+      arrow.setAttribute("src", "images/icon-arrow-down.svg");
+    }
+  });
+
+  const dropdown2 = document.getElementById("dropdown2");
+  const active2 = document.getElementById("active2");
+  const arrow2 = document.getElementById("arrow2");
+  dropdown2.addEventListener("click", () => {
+    if (active2.classList.contains("h-0")) {
+      active2.classList.add("pt-4");
+      active2.classList.replace("h-0", "h-auto");
+      arrow2.setAttribute("src", "images/icon-arrow-up.svg");
+    } else {
+      active2.classList.replace("h-auto", "h-0");
+      active2.classList.remove("pt-4");
+      arrow2.setAttribute("src", "images/icon-arrow-down.svg");
+    }
+  });
+</script>
